@@ -1,8 +1,7 @@
-import { Result } from 'postcss';
-import React, { useState } from 'react';
-import auth from '../../Firebase/firebase.config';
+
 
 const Login = () => {
+
 
     // const [user, setUser] = useState(null);
 
@@ -14,7 +13,7 @@ const Login = () => {
         const password = e.target.password.value;
 
         // we can follow that for create account but now we are use diffarent way.
-        
+
         // signInWithEmailAndPassword(auth, email, password)
         //     .then((result) => {
         //         const loggedUser = result.user;

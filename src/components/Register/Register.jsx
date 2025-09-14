@@ -1,8 +1,11 @@
 import { Result } from 'postcss';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import auth from '../../Firebase/firebase.config';
+import AuthProvider from '../../providers/AuthProvider';
 
 const Register = () => {
+
+    const {createUser} = useContext(AuthProvider)
 
     const [user, setUser] = useState(null);
 
@@ -26,6 +29,17 @@ const Register = () => {
         //     .catch((error) => {
         //     console.log('Error',error.message)
         // })
+
+        // Diffarent way
+        createUser(email, password)
+            .then((result) => {
+                const loggedUser = result.user;
+                console.log(loggedUser)
+            })
+            .catch((error) => {
+            console.log('error', error.message)
+        })
+        
 
 
 
