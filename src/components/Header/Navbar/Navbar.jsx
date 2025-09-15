@@ -22,6 +22,12 @@ const Navbar = () => {
     const navLinks = <>
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/orders'>Orders</NavLink></li>
+        { user &&
+            <>
+                <li><NavLink to='/profile'>Profile</NavLink></li>
+                <li><NavLink to='/dashboard'>Dashboard</NavLink></li>
+            </>
+        }
         <li><NavLink to='/logIn'>Login</NavLink></li>
         <li><NavLink to='/register'>Register</NavLink></li>
 

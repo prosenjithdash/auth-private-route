@@ -1,10 +1,14 @@
 import { useContext } from "react";
 import { AuthContest } from "../../providers/AuthProvider";
+import { useNavigate } from "react-router-dom";
 
 
 const Login = () => {
 
-    const {signInUser} = useContext(AuthContest)
+    const { signInUser } = useContext(AuthContest)
+    
+    // navigate
+    const navigate = useNavigate();
 
 
     // const [user, setUser] = useState(null);
@@ -32,6 +36,8 @@ const Login = () => {
         signInUser(email, password)
             .then((result) => {
                 const loggedUser = result.user;
+                e.target.reset();
+                navigate('/');
                 console.log(loggedUser)
             })
             .catch((error) => {
