@@ -1,14 +1,12 @@
 import { Result } from 'postcss';
 import React, { useContext, useState } from 'react';
-import auth from '../../Firebase/firebase.config';
-import AuthProvider from '../../providers/AuthProvider';
+import AuthProvider, { AuthContest } from '../../providers/AuthProvider';
 
 const Register = () => {
 
-    const {createUser} = useContext(AuthProvider)
+    const { createUser } = useContext(AuthContest)
 
     const [user, setUser] = useState(null);
-
 
     const handleRegister = (e) => {
         e.preventDefault();

@@ -1,6 +1,10 @@
+import { useContext } from "react";
+import { AuthContest } from "../../providers/AuthProvider";
 
 
 const Login = () => {
+
+    const {signInUser} = useContext(AuthContest)
 
 
     // const [user, setUser] = useState(null);
@@ -24,6 +28,15 @@ const Login = () => {
         //         console.log('Error', error.message)
         //     })
 
+        // Diffarent way
+        signInUser(email, password)
+            .then((result) => {
+                const loggedUser = result.user;
+                console.log(loggedUser)
+            })
+            .catch((error) => {
+            console.log('error ', error.message)
+        })
         console.log('Email: ', email, 'Password: ', password)
     }
     return (
